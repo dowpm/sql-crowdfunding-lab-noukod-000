@@ -38,5 +38,5 @@ end
 def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_books_category
   "SELECT p.category, SUM(pl.amount) FROM projects AS p
   JOIN pledges AS pl ON p.id = pl.project_id
-  GROUP BY p.category;"
+  GROUP BY p.category HAVING p.category = 'books';"
 end
